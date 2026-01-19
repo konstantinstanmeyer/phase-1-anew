@@ -35,4 +35,17 @@ public class DrinkService {
                 .filter(drink -> drink != null)
                 .toList();
     }
+
+    public Drink getDrinkById(String id) {
+        DrinkResponse response = webClient.get()
+                .uri("/lookup.php?i=" + id)
+                .retrieve()
+                .bodyToMono(DrinkResponse.class) // converting response to mono
+                .block(); // converts mono response to regular object
+        
+        if (response != null && response.getDrinks() != null && !response.getDrinks().isEmpty()) {
+            return response.getDrinks().get(0);
+        }
+        return null;
+    }
 }
