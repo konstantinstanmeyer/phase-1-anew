@@ -11,4 +11,10 @@ public class WebClientConfig {
     @Value("${cocktaildb.api.base-url}")
     private String baseUrl;
     
+    @Bean
+    public WebClient webClient() {
+        return WebClient.builder()
+                .baseUrl(baseUrl)
+                .build();
+    }
 }
