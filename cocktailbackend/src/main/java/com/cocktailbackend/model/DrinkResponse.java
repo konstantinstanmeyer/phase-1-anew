@@ -7,7 +7,13 @@ public class DrinkResponse {
     private List<Drink> drinks;
 
 
-    public DrinkResponse () {
+    public DrinkResponse () {}
 
+    public List<Drink> getDrinks() { 
+        return drinks; 
+    }
+
+    public void setDrinks(List<Drink> drinks) { 
+        this.drinks = drinks;
     }
 }
