@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const [name, setName] = useState<string>("");
+
+  function handleSubmit(e: React.FormEvent){
+    e.preventDefault();
+    if(nameRef.current){
+      setName(nameRef.current.value);
+    }
+  }
 
   return (
     <>
@@ -28,6 +37,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p>{name}</p>
+      <form onSubmit={handleSubmit} >
+        <input ref={nameRef} />
+        <button type="submit">Submit</button>
+      </form>
     </>
   )
 }
