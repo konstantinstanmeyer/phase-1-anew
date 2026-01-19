@@ -18,10 +18,10 @@ public class DrinkController {
          System.out.println("running!");
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "OK";
-    }
+    // @GetMapping("/test")
+    // public String test() {
+    //     return "OK";
+    // }
     
     @GetMapping("/by-ingredient")
     public ResponseEntity<List<Drink>> getDrinksByIngredient(@RequestParam String ingredient) {
