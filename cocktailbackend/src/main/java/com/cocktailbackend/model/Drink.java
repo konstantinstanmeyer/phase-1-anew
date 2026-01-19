@@ -1,9 +1,4 @@
 package com.cocktailapp.model;
-
-import java.util.ArrayList;
-import java.util.List;
-
-// data fields
 // idDrink: "15346"
 // ingredients: (4) ['1 shot Dark rum', '2 shots Light rum', '1 shot Vodka', '1 shot Orange juice']
 // strDrink: "155 Belmont"
@@ -24,5 +19,27 @@ import java.util.List;
 
 
 public class Drink {
-    
+    // hardcoding field handling
+    private String idDrink;
+    private String strDrink;
+    private String strInstructions;
+    private String strDrinkThumb;
+
+    private String strIngredient1;
+    private String strIngredient2;
+    private String strIngredient3;
+    private String strIngredient4;
+    private String strIngredient5;
+    private String strIngredient6;
+
+    private String strMeasure1;
+    private String strMeasure2;
+    private String strMeasure3;
+    private String strMeasure4;
+    private String strMeasure5;
+    private String strMeasure6;
+
+    public Drink(){
+
+    }
 }
