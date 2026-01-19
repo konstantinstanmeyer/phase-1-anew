@@ -1,5 +1,8 @@
 import { useState, useRef } from 'react'
-import './App.css'
+import './App.css';
+import Drinks from './Drinks/Drinks';
+
+
 
 function App() {
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -15,6 +18,7 @@ function App() {
   return (
     <>
       <p>{name}</p>
+      <Drinks />
       <form onSubmit={handleSubmit} >
         <input ref={nameRef} />
         <button type="submit">Submit</button>
