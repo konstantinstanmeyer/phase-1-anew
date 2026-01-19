@@ -1,14 +1,13 @@
-package com.example.phase_1_anew;
+package com.cocktailbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Phase1AnewApplication {
+public class CocktailbackendApplication {
 
-	// comment
 	public static void main(String[] args) {
-		SpringApplication.run(Phase1AnewApplication.class, args);
+		SpringApplication.run(CocktailbackendApplication.class, args);
 	}
 
 }

@@ -8,11 +8,11 @@
 		<version>4.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>phase-1-anew</artifactId>
+	<groupId>com</groupId>
+	<artifactId>cocktailbackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>phase-1-anew</name>
-	<description>Recreated, Full-Stack Version of Phase 1 Project</description>
+	<name>cocktailbackend</name>
+	<description>Backend for demoing cocktail app in Java</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -32,12 +32,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

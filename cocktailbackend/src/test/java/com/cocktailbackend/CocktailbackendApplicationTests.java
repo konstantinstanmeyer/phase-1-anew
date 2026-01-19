@@ -1,10 +1,10 @@
-package com.example.phase_1_anew;
+package com.cocktailbackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Phase1AnewApplicationTests {
+class CocktailbackendApplicationTests {
 
 	@Test
 	void contextLoads() {
