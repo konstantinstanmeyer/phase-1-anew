@@ -1,5 +1,4 @@
 package com.cocktailapp.model;
-// idDrink: "15346"
 // ingredients: (4) ['1 shot Dark rum', '2 shots Light rum', '1 shot Vodka', '1 shot Orange juice']
 // strDrink: "155 Belmont"
 // strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg"
