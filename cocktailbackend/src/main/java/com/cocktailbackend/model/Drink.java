@@ -15,6 +15,9 @@ package com.cocktailapp.model;
 // strMeasure5: null
 // strMeasure6: null
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Drink {
     // hardcoding field handling
     private String idDrink;
@@ -163,5 +166,13 @@ public class Drink {
 
     public void setStrMeasure6(String strMeasure6) { 
         this.strMeasure6 = strMeasure6; 
+    }
+    
+    private void addIngredient(List<String> list, String measure, String ingredient) {
+        if (ingredient != null && !ingredient.isBlank()) {
+            // trimming trailing space after measurements name
+            String entry = (measure != null ? measure.trim() + " " : "") + ingredient.trim();
+            list.add(entry.trim());
+        }
     }
 }
