@@ -175,4 +175,20 @@ public class Drink {
             list.add(entry.trim());
         }
     }
+
+    public List<String> getIngredients() {
+        List<String> list = new ArrayList<>();
+
+        // using helper function
+
+        // maybe refactor to visually-pleasing loop approach
+        addIngredient(list, strMeasure1, strIngredient1);
+        addIngredient(list, strMeasure2, strIngredient2);
+        addIngredient(list, strMeasure3, strIngredient3);
+        addIngredient(list, strMeasure4, strIngredient4);
+        addIngredient(list, strMeasure5, strIngredient5);
+        addIngredient(list, strMeasure6, strIngredient6);
+
+        return list;
+    }
 }
