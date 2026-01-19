@@ -1,4 +1,4 @@
-package com.cocktailapp.model;
+package com.cocktailbackend.model;
 
 import java.util.List;
 

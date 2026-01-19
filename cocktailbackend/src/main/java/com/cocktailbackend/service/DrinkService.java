@@ -1,9 +1,9 @@
-package com.cocktailapp.service;
+package com.cocktailbackend.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import com.cocktailapp.model.Drink;
-import com.cocktailapp.model.DrinkResponse;
+import com.cocktailbackend.model.Drink;
+import com.cocktailbackend.model.DrinkResponse;
 
 import java.util.Collections;
 import java.util.List;

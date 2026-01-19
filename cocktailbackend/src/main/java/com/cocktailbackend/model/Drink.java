@@ -1,4 +1,4 @@
-package com.cocktailapp.model;
+package com.cocktailbackend.model;
 // strDrink: "155 Belmont"
 // strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg"
 // strIngredient1: "Dark rum"
