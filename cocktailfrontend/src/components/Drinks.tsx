@@ -5,13 +5,14 @@ const LIQUORS = [ "Vodka", "Rum", "Whiskey"];
 interface Drink {
     idDrink: string;
     strDrink: string;
+    ingredients: string[];
     strInstructions: string;
     strDrinkThumb: string;
 }
 
 export default function Drinks (){
     const [selectedLiquor, setSelectedLiquor] = useState<string | null>(null)
-    const [drinks, setDrinks] = useState([])
+    const [drinks, setDrinks] = useState<Drink[]>([])
     const [loading, setLoading] = useState(false);
 
     // fetch drinks when liquor has been selected
@@ -24,7 +25,7 @@ export default function Drinks (){
 
         try {
             const response = await fetch(`http://localhost:8080/api/drinks/by-ingredient?ingredient=${liquor}`)
-            const data = await response.json();
+            const data: Drink[] = await response.json();
 
             setDrinks(data);
             setLoading(false);
