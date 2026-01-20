@@ -45,6 +45,10 @@ export default function Drinks (){
         setSelectedDrink(drink);
     }
 
+    function handleCloseModal(){
+        setSelectedDrink(null);
+    }
+
     return (
         <section className="">
             {!selectedLiquor && (
@@ -52,7 +56,7 @@ export default function Drinks (){
                     {LIQUORS.map(liquor => (
                         <button
                             key={liquor + "-option"}
-                            className="l"
+                            className=""
                             onClick={() => handleLiquorClick(liquor)}
                         >
                         {liquor}
@@ -66,28 +70,53 @@ export default function Drinks (){
                         Return to List
                     </button>
                     {loading && (
-                        <div className="loading">Loading drinks...</div>
+                        <div className="">Loading drinks...</div>
                     )}
                     {!loading && drinks.length > 0 && (
-                        <div className="drink-list">
+                        <div className="">
                         {drinks.map(drink => (
                             <div
                                 key={drink.idDrink}
-                                className="drink-card"
+                                className=""
                                 onClick={() => handleDrinkClick(drink)}
                             >
                             <img
                                 src={drink.strDrinkThumb + '/small'} // 200x200px
                                 alt={drink.strDrink}
-                                className="drink-image"
+                                className=""
                             />
-                            <span className="drink-name">{drink.strDrink}</span>
+                            <span className="">{drink.strDrink}</span>
                             </div>
                         ))}
                         </div>
                     )}
                 </>
+            )}
+            {selectedDrink && (
+                <div className="" onClick={handleCloseModal}>
+                    <div className="" onClick={e => e.stopPropagation()}>
+                        <div className="">
+                            <h2 className="">{selectedDrink.strDrink}</h2>
+                            <button className="" onClick={handleCloseModal}>x</button>
+                        </div>
 
+                        <img
+                            src={selectedDrink.strDrinkThumb + '/large'}
+                            alt={selectedDrink.strDrink}
+                            className=""
+                        />
+
+                        <h3 className="">Ingredients</h3>
+                        <ul className="">
+                            {selectedDrink.ingredients && selectedDrink.ingredients.map((ingredient, index) => (
+                                <li key={index} className="">{ingredient}</li>
+                            ))}
+                        </ul>
+
+                        <h3 className="">Instructions</h3>
+                        <p className="">{selectedDrink.strInstructions}</p>
+                    </div>
+                </div>
             )}
         </section>
     )
