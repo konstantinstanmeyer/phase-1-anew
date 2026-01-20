@@ -1,1 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
+
 @import "tailwindcss";
+
+:root {
+  --font-typewriter: 'Special Elite', 'Courier Prime', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-typewriter);
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-typewriter {
+  font-family: var(--font-typewriter);
+}
