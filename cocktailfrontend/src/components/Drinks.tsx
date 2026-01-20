@@ -14,6 +14,7 @@ export default function Drinks (){
     const [selectedLiquor, setSelectedLiquor] = useState<string | null>(null)
     const [drinks, setDrinks] = useState<Drink[]>([])
     const [loading, setLoading] = useState(false);
+    const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
 
     // fetch drinks when liquor has been selected
     async function handleLiquorClick(liquor: string) {
@@ -40,6 +41,10 @@ export default function Drinks (){
         setDrinks([])
     }
 
+    function handleDrinkClick(drink: Drink) {
+        setSelectedDrink(drink);
+    }
+
     return (
         <section className="">
             {!selectedLiquor && (
@@ -62,6 +67,24 @@ export default function Drinks (){
                     </button>
                     {loading && (
                         <div className="loading">Loading drinks...</div>
+                    )}
+                    {!loading && drinks.length > 0 && (
+                        <div className="drink-list">
+                        {drinks.map(drink => (
+                            <div
+                                key={drink.idDrink}
+                                className="drink-card"
+                                onClick={() => handleDrinkClick(drink)}
+                            >
+                            <img
+                                src={drink.strDrinkThumb + '/small'} // 200x200px
+                                alt={drink.strDrink}
+                                className="drink-image"
+                            />
+                            <span className="drink-name">{drink.strDrink}</span>
+                            </div>
+                        ))}
+                        </div>
                     )}
                 </>
 
