@@ -14,6 +14,7 @@ export default function Drinks (){
     async function handleLiquorClick(liquor: string) {
         setDrinks([]);
         setSelectedLiquor(liquor);
+        console.log("Liquor: " + liquor);
         
 
         try {
