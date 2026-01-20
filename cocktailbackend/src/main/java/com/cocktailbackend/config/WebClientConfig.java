@@ -3,10 +3,9 @@ package com.cocktailbackend.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import reactor.core.publisher.Mono;
+// import reactor.core.publisher.Mono;
 
 @Configuration
 public class WebClientConfig {
@@ -18,24 +17,22 @@ public class WebClientConfig {
     public WebClient webClient() {
         return WebClient.builder()
                 .baseUrl(baseUrl)
-                .filter(logRequest())
-                .filter(logResponse())
                 .build();
     }
 
-    private ExchangeFilterFunction logRequest() {
-        return ExchangeFilterFunction.ofRequestProcessor(request -> {
-            System.out.println("➡️ REQUEST");
-            System.out.println(request.method() + " " + request.url());
-            request.headers().forEach((k, v) -> System.out.println(k + ": " + v));
-            return Mono.just(request);
-        });
-    }
+    // private ExchangeFilterFunction logRequest() {
+    //     return ExchangeFilterFunction.ofRequestProcessor(request -> {
+    //         System.out.println("➡️ REQUEST");
+    //         System.out.println(request.method() + " " + request.url());
+    //         request.headers().forEach((k, v) -> System.out.println(k + ": " + v));
+    //         return Mono.just(request);
+    //     });
+    // }
 
-    private ExchangeFilterFunction logResponse() {
-        return ExchangeFilterFunction.ofResponseProcessor(response -> {
-            System.out.println("⬅️ RESPONSE STATUS: " + response.statusCode());
-            return Mono.just(response);
-        });
-    }
+    // private ExchangeFilterFunction logResponse() {
+    //     return ExchangeFilterFunction.ofResponseProcessor(response -> {
+    //         System.out.println("⬅️ RESPONSE STATUS: " + response.statusCode());
+    //         return Mono.just(response);
+    //     });
+    // }
 }

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 // }
 
-const LIQUORS = [ "Vodka, Rum, Whiskey "];
+const LIQUORS = [ "Vodka", "Rum", "Whiskey"];
 
 export default function Drinks (){
     const [selectedLiquor, setSelectedLiquor] = useState<string | null>(null)
