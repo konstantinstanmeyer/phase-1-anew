@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import './App.css';
-import Drinks from './Drinks/Drinks';
+import Drinks from './components/Drinks';
 
 
 
